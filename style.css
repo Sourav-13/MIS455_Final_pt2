@@ -1,0 +1,62 @@
+:root {
+    --blue: #2565ae;
+    --blue-lighter: #66d3fa;
+    --blue-light: #3c99dc;
+    --blue-lighest: #d5f3fe;
+    --blue-dark: #0f5298;
+  }
+  
+  body,
+  html {
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    background-image: url("./pictures/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .nav-bar {
+    margin-top: 20px;
+    align-items: center;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .nav-bar a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.2s ease-out;
+    position: relative;
+  }
+  
+  .nav-bar a:first-child {
+    color: var(--blue-lighter);
+  }
+  
+  .nav-bar a:hover {
+    color: var(--blue-lighter);
+    transform: translateY(-3px);
+  }
+  
+  .nav-bar a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: var(--blue-light);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+  }
+  

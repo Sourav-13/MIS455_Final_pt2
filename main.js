@@ -27,4 +27,44 @@ function displayWeather(data) {
     const dateContainer = document.createElement("div");
     dateContainer.classList.add("fetchDate-container");
 
- 
+    const dateTime = new Date(forecast.dt_txt);
+    const day = Week(dateTime.getDay());
+    const date = dateTime.toLocaleDateString();
+    dateContainer.innerHTML += `
+                    <h2>${day}, ${date}</h2><br>
+                `;
+
+    const temperature = forecast.main.temp;
+    const windSpeed = forecast.wind.speed;
+    const humidity = forecast.main.humidity;
+    const pressure = forecast.main.pressure;
+    const description = forecast.weather[0].description;
+    const iconCode = forecast.weather[0].icon;
+    const iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
+
+    dateContainer.innerHTML += `
+                    <p>Temperature: ${temperature}°C</p>
+                    <p>Wind Speed: ${windSpeed} m/s</p>
+                    <p>Humidity: ${humidity}%</p>
+                    <p>Pressure: ${pressure} hPa</p>
+                    <p>Description: ${description}</p>
+                    <img class="weather-icon" src="${iconUrl}" alt="Weather Icon">
+                    <hr>
+                `;
+
+    weatherInfoDiv.appendChild(dateContainer);
+  });
+}
+
+function Week(dayIndex) {
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[dayIndex];
+}
