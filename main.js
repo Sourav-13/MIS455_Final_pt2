@@ -10,12 +10,11 @@ function weatherApi() {
 
   fetch(apiUrl)
     .then((response) => response.json())
-    .then((data) => displayWeather(data))
+    .then((data) => displayWeather(data));
 }
 function displayWeather(data) {
   const weatherInfoDiv = document.getElementById("weatherInfo");
   weatherInfoDiv.innerHTML = "";
-
 
   const forecastList = data.list;
   const forecastsFor6AM = forecastList.filter((forecast) => {
@@ -54,6 +53,9 @@ function displayWeather(data) {
 
     weatherInfoDiv.appendChild(dateContainer);
   });
+  var title = document.getElementById("title");
+  const countryInput = document.getElementById("countryInput").value;
+  title.innerHTML = `5-Day Weather Forecast Data Of <b> ${countryInput}</b>`;
 }
 
 function Week(dayIndex) {
