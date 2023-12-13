@@ -1,10 +1,31 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    
+    <header>
+        <nav class="nav-bar">
+            <label>Weather App</label>
+        </nav>
+        <hr>
+        <div class="container">
+            <h1> 5 day weather forecast data</h1>
+            <div class="search-bar">
+                <input type="text" id="countryInput" placeholder="Search here...">
+                <button onclick="weatherApi()">Search update</button>
+            </div>
+            <div id="weatherInfo"></div>
+        </div>
 </body>
+<script src="main.js"></script>
+</body>
+
 </html>
