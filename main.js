@@ -30,7 +30,7 @@ function displayWeather(data) {
     const day = Week(dateTime.getDay());
     const date = dateTime.toLocaleDateString();
     dateContainer.innerHTML += `
-                    <h2>${day}, ${date}</h2><br>
+                    <h2>${day}</h2><h2> ${date}</h2><br>
                 `;
 
     const temperature = forecast.main.temp;
@@ -46,7 +46,7 @@ function displayWeather(data) {
                     <p>Wind Speed: ${windSpeed} m/s</p>
                     <p>Humidity: ${humidity}%</p>
                     <p>Pressure: ${pressure} hPa</p>
-                    <p>Description: ${description}</p>
+                    <p style="text-transform: capitalize;">Description: ${description}</p>
                     <img class="weather-icon" src="${iconUrl}" alt="Weather Icon">
                     <hr>
                 `;
